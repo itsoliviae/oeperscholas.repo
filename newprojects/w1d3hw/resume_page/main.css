@@ -12,3 +12,10 @@ h3 {
 img {
     border: solid 10px orange;
 }
+ul {
+    width:auto;
+    margin-top:auto;
+}
+nav {
+    background-color: lightgray;
+}
