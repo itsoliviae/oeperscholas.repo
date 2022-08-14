@@ -1,0 +1,31 @@
+body {
+    background-color: bisque;
+}
+h1 {
+    color:blueviolet
+}
+
+h5 {
+    color:lightpink; 
+    
+}
+card {
+    border: solid 12px white;
+}
+
+
+.card-body {
+    background-color: salmon;
+    border: solid 12px white;
+}
+
+.card-text {
+    color: white
+}
+img {
+    border: solid 14px white;
+    
+}
+.toast-alert {
+    background-color: blueviolet;
+}
