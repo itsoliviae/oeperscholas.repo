@@ -27,6 +27,7 @@ for (let i = 1; i <= 100; i++) {
 */
 // Wild Wild Life
 ////////////////////////////////
+/*
 const wolfy = ["Wolfy", "wolf", 16, "Yukon Territory"]
 const sharky = ["Sharky", "shark", 20, "Left Coast"]
 const plantee = ["Plantee", "plant",  5000 , "Mordor"]
@@ -44,9 +45,15 @@ console.log(dart);
 
 wolfy.splice(0, 0, "Gameboy");
 console.log(wolfy);
+*/
 
 // Yell at the Ninja Turtles
 ////////////////////////////////
+
+const turtles = ['donatello', 'leonardo', 'raphael', 'michaelangelo']
+const tmnt = turtles.map(turtles => turtles.toUpperCase());
+console.log(tmnt);
+
 
 // Methods, Revisited
 ////////////////////////////////
