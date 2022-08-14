@@ -1,6 +1,14 @@
+body {
+    background-color: lavender;
+}
 h1 {
-    color:blue
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:green;
+
+}
+h3 {
+    color:salmon;
 }
 img {
-    border: solid 10px black;
+    border: solid 10px orange;
 }
