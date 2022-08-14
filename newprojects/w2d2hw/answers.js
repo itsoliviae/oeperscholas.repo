@@ -1,20 +1,20 @@
 // Easy Going
 ////////////////////////////////
-/*
+
 for (let i = 1; i <= 20; i++) {
     console.log(i);
 }
-*/
+
 // Get Even
 ////////////////////////////////
-/*
+
 for (let i = 0; i <= 200; i+= 2) {
     console.log(i);
 }
-*/
+
 // Fizz Buzz
 ////////////////////////////////
-/*
+
 for (let i = 1; i <= 100; i++) {
     if (i % 15 === 0) {
         console.log("fizzbuzz");
@@ -24,10 +24,10 @@ for (let i = 1; i <= 100; i++) {
         console.log("fizz")
     }
 }
-*/
+
 // Wild Wild Life
 ////////////////////////////////
-/*
+
 const wolfy = ["Wolfy", "wolf", 16, "Yukon Territory"]
 const sharky = ["Sharky", "shark", 20, "Left Coast"]
 const plantee = ["Plantee", "plant",  5000 , "Mordor"]
@@ -45,19 +45,19 @@ console.log(dart);
 
 wolfy.splice(0, 0, "Gameboy");
 console.log(wolfy);
-*/
+
 
 // Yell at the Ninja Turtles
 ////////////////////////////////
-/*
+
 const turtles = ['donatello', 'leonardo', 'raphael', 'michaelangelo']
 const tmnt = turtles.map(turtles => turtles.toUpperCase());
 console.log(tmnt);
-*/
+
 
 // Methods, Revisited
 ////////////////////////////////
-/*
+
 const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious'];
 // console.log(favMovies.indexOf('Titanic'));
 favMovies.sort();
@@ -85,12 +85,12 @@ console.log(favMovies);
 
 favMovies.slice();
 console.log(favMovies);
-*/
+
 // a removed item returns 'undefined'
 
 // Where is Waldo
 ////////////////////////////////
-/*
+
 const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
                     ["Lucinda", "Jacc", "Neff", "Snoop"],
                     ["Petunia", ["Baked Goods", "Waldo"]]];
@@ -102,10 +102,26 @@ whereIsWaldo.splice(-1, -1, "No One");
 console.log(whereIsWaldo); 
 
 console.log(whereIsWaldo.indexOf("Waldo"));
-*/
+
 
 //  Excited Kitten
 ////////////////////////////////
 
+for (let excitedKitten = 0; excitedKitten <= 20; excitedKitten++) {
+    console.log("Love me, pet me! HSSSSSS!");
+}
+
+const catTalk = ["...human...why you taking pictures of me?...", "...the catnip made me do it...", "...why does the red dot always get away..."];
+let meow = 0;
+catTalk[meow];
+console.log(catTalk(Math.random())); // I am totally stuck on this one
+
+
 //  Find the Median
 ////////////////////////////////
+
+const nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
+nums.sort();
+console.log(nums);
+
+// I can figure out how to sort this array but get stuck on using Math.floor
