@@ -59,3 +59,7 @@ if (alienShipFleet.accuracy >= Math.random()) {
     console.log(`Alien has MISSED! You have ${superShip.hull} hitpoints left!`);
 
     
+
+    mulitple events on button
+    adding mulptiple event handlers
+    

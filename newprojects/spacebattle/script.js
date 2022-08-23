@@ -10,46 +10,6 @@ let superShip = {
 
 // console.log(superShip.name); //O
 
-const alienShipFleet = [
-    {
-      name: 'Green',
-      hull: 3,
-      firePower: 2,
-      accuracy: .6
-    },
-    {
-        name: 'Pink',
-        hull: 4,
-        firePower: 3,
-        accuracy: .7
-      },
-      {
-        name: 'Orange',
-        hull: 5,
-        firePower: 4,
-        accuracy: .8
-      },
-      {
-        name: 'Blue',
-        hull: 6,
-        firePower: 2,
-        accuracy: .6
-      },
-      {
-        name: 'Silver',
-        hull: 3,
-        firePower: 3,
-        accuracy: .7
-      },
-      {
-        name: 'Purple',
-        hull: 4,
-        firePower: 4,
-        accuracy: .8
-      },
-  ];
-
-
 class AlienShip {
     constructor(name) {
         this.name = name;
@@ -64,13 +24,23 @@ class AlienShip {
     }
 
 }
+let alienShipFleet = ["Green", "Pink", "Orange", "Blue", "Silver", "Purple"];
+let newArray = []
+for (let i = 0; i < alienShipFleet.length; i++) {
+    let anotherShip = new AlienShip(alienShipFleet[i]);
+    newArray.push(anotherShip)
+    console.log(anotherShip);
+  
+}
 
-const button = document.getElementById('button');
-button.addEventListener('click', () => {
-    console.log(spaceBattle()); 
+let button = document.getElementById('button');
+button.addEventListener('click', spaceBattle); 
 
+
+
+   
 function spaceBattle() {
-    for (let i = 0; i < alienShipFleet.length; i++) {
+    for (let i = 0; i < alienShipFleet.length; i++)  {
         while (alienShipFleet[i].hull > 0 && superShip.hull > 0) {
     const alienHullDamage = alienShipFleet[i].hull - superShip.firepower;
     if (superShip.accuracy >= Math.random()) {
@@ -79,17 +49,28 @@ function spaceBattle() {
         `you have attacked the ${alienShipFleet[i].name} and they have ${alienShipFleet[i].hull} hitpoints left!`);
         } else if(alienShipFleet[i].hull === 0) {
             console.log(alert('ALIEN SHIPS HAVE BEEN DEFEATED! GAME OVER!'));
-    //HOW DO I STOP AT 0?
+
     
     } else {
         console.log(`Alien has MISSED! You have ${superShip.hull} hitpoints left!`);
-    }
+        
+        for (let i = 0; i < alienShipFleet.length; i++) {
+            if (alienShipFleet[i].hull == 0) {
+              console.log("all ships destroyed ");
+            }
     if (alienShipFleet.accuracy >= Math.random()) {
         superShip.hull = hullDamage;
-        console.log(
-        `you have been attacked by the ${alienShipFleet[i].name} and you now have ${superShip.hull} hitpoints left!`);
-       
-    //HOW DO I STOP AT 0?
+
+        while (alienShipFleet[i].hull > 0 && superShip.hull > 0) {
+            if (superShip.accuracy >= Math.random()) {
+              let alienHullDamage = alienShipFleet[i].hull - superShip.firepower;
+              if (alienHullDamage < 0) {
+                alienHullDamage = 0;
+              }
+              alienShipFleet[i].hull = alienHullDamage;
+              console.log(
+              `you have been attacked by the ${alienShipFleet[i].name} and you now have ${superShip.hull} hitpoints left!`);
+    
     
     } else {
         console.log(`Alien has MISSED! You have ${superShip.hull} hitpoints left!`);
@@ -97,9 +78,17 @@ function spaceBattle() {
         
     }
 }
+console.log(`you have attacked the ${alienShipFleet[i].name} and they have ${alienShipFleet[i].hull} hitpoints left!`);
+
+} else if (alienShipFleet[i].hull === 0) {
+console.log(alert("ALIEN SHIPS HAVE BEEN DEFEATED! GAME OVER!"));
+
+} else {
+console.log(
+  `Alien has MISSED! You have ${superShip.hull} hitpoints left!`)
     }
 }
-})
+}
 // why is it undefined after 1st click?
 // how can i stop the loop at 0?
 // how can i eliminate each alienship?
@@ -107,4 +96,10 @@ function spaceBattle() {
 
 
 
+ }
+     {
+
+    } 
+}
+ }
 
