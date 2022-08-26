@@ -1,4 +1,4 @@
-var menuLinks = [
+let menuLinks = [
     {text: 'about', href: '/about'},
     {text: 'catalog', href: '#', subLinks: [
       {text: 'all', href: '/catalog/all'},
@@ -16,12 +16,12 @@ var menuLinks = [
     ]},
   ];
 
-  for (var i = 0; i < menuLinks.length; i++);
+  for (let i = 0; i < menuLinks.length; i++);
   let link = document.createElement('a');
   let text = document.createElement('text');
 
 function menuBar() {
-  var topMenu = document.getElementById("top-menu");
+  let topMenu = document.getElementById("top-menu");
   if (topMenu.className === "topnav") {
     topMenu.className += " responsive";
   } else {
