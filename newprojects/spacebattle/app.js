@@ -1,52 +1,102 @@
-/* let superShip = {
-    shipName: 'USS Schwarzenegger',
+let superShip = {
+    name: 'USS Schwarzenegger',
     hull: 20,
     firepower: 5,
-    accuracy: .7
-    updateHull:[
-         
-    ] () => {
-        return alienAttackDamage;
-    },
-}
-
-function alienAttack(){
-    if (Alienship.accuracy >= 0.6 && Alienship.accuracy <= .8 && superShip > 0){
-        let alienAttackDamage = superShip.hull - Alienship.firePower;
-        return console.log(`${superShip.name}` + `You destroyed`  + `${alienAttackDamage}` + ' The alien ship ' + `${Alienship.name}` + ' was ' `${Alienship.accuracy}` + ' accurate');
+    accuracy: .7,
+    hullDamage(damage) {
+        this.hull = this.hull - damage;
     }
-}
-console.log(alienAttack(.4));
+    }
 
+// console.log(superShip.name); //O
 
-
-
-class Alienship {
-    constructor(name, hull, firePower, accuracy) {
+class AlienShip {
+    constructor(name) {
         this.name = name;
-        this.hull = hull;
-        this.firePower = firePower;
-        this.accuracy = accuracy;
+        this.hull = Math.floor(Math.random() * 4) + 3;
+        this.firepower = Math.floor(Math.random() * 3) + 2;
+        this.accuracy = (Math.floor(Math.random() * 3) + 6) / 10;
+
+    };
+
+    hullDamage(damage) {
+        return this.hull = this.hull - damage;
+    }
+
+}
+let alienShipFleet = ["Green", "Pink", "Orange", "Blue", "Silver", "Purple"];
+let alienObject = []
+for (let i = 0; i < alienShipFleet.length; i++) {
+    let anotherShip = new AlienShip(alienShipFleet[i]);
+    alienObject.push(anotherShip)
+    console.log(anotherShip);
+  
+}
+
+let button = document.getElementById('button');
+button.addEventListener('click', spaceBattle); 
+
+
+
+   
+function spaceBattle() {
+    for (let i = 0; i < alienShipFleet.length; i++)  {
+        while (alienObject[i].hull > 0 && superShip.hull > 0) {
+    const alienHullDamage = alienObject[i].hull - superShip.firepower;
+    if (superShip.accuracy >= Math.random()) {
+        alienObject[i].hull = alienHullDamage;
+        console.log(
+        `you have attacked the ${alienObject[i].name} and they have ${alienObject[i].hull} hitpoints left!`);
+        } else if(alienObject[i].hull === 0) {
+            console.log(alert('ALIEN SHIPS HAVE BEEN DEFEATED! GAME OVER!'));
+
+    
+    } else {
+        console.log(`Alien has MISSED! You have ${superShip.hull} hitpoints left!`);
+        
+        for (let i = 0; i < alienShipFleet.length; i++) {
+            if (alienObject[i].hull == 0) {
+              console.log("all ships destroyed ");
+            }
+    if (alienShipFleet.accuracy >= Math.random()) {
+        superShip.hull = hullDamage;
+
+        while (alienObject[i].hull > 0 && superShip.hull > 0) {
+            if (superShip.accuracy >= Math.random()) {
+              let alienHullDamage = alienObject[i].hull - superShip.firepower;
+              if (alienHullDamage < 0) {
+                alienHullDamage = 0;
+              }
+              alienObject[i].hull = alienHullDamage;
+              console.log(
+              `you have been attacked by the ${alienObject[i].name} and you now have ${superShip.hull} hitpoints left!`);
+    
+    
+    } else {
+        console.log(`Alien has MISSED! You have ${superShip.hull} hitpoints left!`);
+    
+        
     }
 }
-let newAlienship1 = new Alienship('Green','3', '2', '.6');
-let newAlienship2 = new Alienship('Pink', '4', '3', '.7');
-let newAlienship3 = new Alienship('Orange', '5', '4', '.8');
-let newAlienship4 = new Alienship('Blue', '6', '2', '.6');
-let newAlienship5 = new Alienship('Silver', '3', '3', '.7');
-let newAlienship6 = new Alienship('Purple', '4', '4', '.8');
+console.log(`you have attacked the ${alienObject[i].name} and they have ${alienObject[i].hull} hitpoints left!`);
+
+} else if (alienObject[i].hull === 0) {
+console.log(alert("ALIEN SHIPS HAVE BEEN DEFEATED! GAME OVER!"));
+
+} else {
+console.log(
+  `Alien has MISSED! You have ${superShip.hull} hitpoints left!`)
+    }
+}
+    }
 
 
 
-//if(superShip.hull <= 19) {
-//   console.log(alert('you were hit!'));
 
-//} else if (superShip.hull == 20) {
-//    console.log(alert('you are safe!'));
-//} else if (superShip.hull <= 19) {
-//    console.log(alert(''));
-//}
+ }
+     {
 
-//console.log(superShip.hull);
+    } 
+}
+ }
 
-*/
