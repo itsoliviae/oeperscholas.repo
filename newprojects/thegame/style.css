@@ -1,0 +1,67 @@
+body {
+    background-image: url("https://cdn.shopify.com/s/files/1/0065/4917/6438/products/a-pretty-lively-carnival-background_e37fcabd-e14f-43bf-96da-dd7e70a0de17_1200x1200.jpg?v=1549231157");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-grid {
+    margin: 30px ;
+    width: 700px;
+    display: grid;
+    gap: 10px;
+ 
+  }
+  .container {
+    width: 800px;
+    max-width: 90%;
+    background-color: rgb(27, 182, 148);
+    border-radius: 5px;
+    box-shadow: 0 0 20px 4px;
+
+  }
+  
+  .btn {
+    outline: none;
+    border-radius: 50px;
+    border-color: white;
+    color: black;
+  }
+ 
+  .btn:hover {
+    border-color: rgb(255, 0, 98);
+  }
+
+  .startButton {
+    font-size: 2rem;
+    border-radius: 10px;
+    border-color:rgb(255, 0, 98)
+  }
+  .startButton:hover {
+    border-color: white;
+
+  }
+
+  .nextButton {
+    font-size: 2rem;
+    border-radius: 10px;
+    border-color:rgb(255, 0, 98)
+  }
+
+  .nextButton:hover {
+    border-color: white;
+  }
+
+  .oppButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
