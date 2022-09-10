@@ -4,35 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CARNIVAL TRIVIA</title>
+    <title>CARNIVAL TRIVIA NIGHT!</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-
+    <div class="box">
+    <iframe width="50" height="50" src="https://www.youtube.com/embed/-lJBTCSL5Fg?autoplay=1" ></iframe>
+    </div>
     <div class="container">
         <div id="triviaContainer" class="hide"></div>
-        <div id="question">Question HERE</div>
+        <div id="question"><center><h1>Welcome to trivia night at the carnival! <br>
+            Test your trivia knowledge with questions about movies, food, music and more! 
+            The game begins with Player 1 answering the first question. If Player 1 answers correctly, they will answer the next question. If Player
+            1 answers incorrectly, Player 2 takes a turn. The first player to answer 4 trivia questions correct wins! </h1></center>
+        </div>
         <div id="answerButton" class="btn-grid">
-            <button class="btn">answeransweranswer</button>
-            <button class="btn">answeransweranswer</button>
-            <button class="btn">answeransweranswer</button>
-            <button class="btn">answeransweranswer</button>
-            <button class="btn">answeransweranswer</button>
-            <button class="btn">answeransweranswer</button>
+            
+
+        </div>
+
+        <div class="players">
+            <div id="message" class="hide"><h2>CONTESTANT #1 , GO!</h2></div>
+            <div id="playerContainer" class="hide">
+            <div class="player1">
+                <h3>
+                    Contestant #1 score:
+                    <span id="player1Scoreboard" class="active">0</span>
+                </h3>
+            </div>
+            <div class="player2">
+                <h3>Contestant #2 score:
+                    <span id="player2Scoreboard" class="active">0</span>
+                </h3>
+                </div>
+        </div>
         </div>
         <div class="oppButtons">
-            <button id="startButton" class="startButton button">START</button>
-            <button id="nextButton" class="nextButton button hide">NEXT!</button>
+            <button id="startButn" class="startButn button">START!</button>
+    
+            <button id="nextButn" class="nextButn button hide">NEXT!</button>
         </div>
 
 
 
     </div>
-
-
-
-
 
 
 
