@@ -1643,4 +1643,263 @@ nfl=# select head_coach from teams where division like 'A%';
 (0 rows)
 
 
-nfl=#
+postgres=# \c nfl;
+You are now connected to database "nfl" as user "postgres".
+nfl=# select teams from teams;
+                                       teams
+------------------------------------------------------------------------------------
+ (1,"Buffalo Bills","Ralph Wilson Stadium",East,AFC,"Doug Marrone",t)
+ (2,"Miami Dolphins","Sun Life Stadium",East,AFC,"Joe Philbin",t)
+ (3,"New England Patriots","Gillette Stadium",East,AFC,"Bill Belichick",t)
+ (4,"New York Jets","MetLife Stadium",East,AFC,"Rex Ryan",t)
+ (5,"Baltimore Ravens","M&T Bank Stadium",North,AFC,"John Harbaugh",t)
+ (6,"Cincinnati Bengals","Paul Brown Stadium",North,AFC,"Marvin Lewis",t)
+ (7,"Cleveland Browns","FirstEnergy Stadium",North,AFC,"Mike Pettine",t)
+ (8,"Pittsburgh Steelers","Heinz Field",North,AFC,"Mike Tomlin",t)
+ (9,"Houston Texans","NRG Stadium",South,AFC,"Bill OBrien",t)
+ (10,"Indianapolis Colts","Lucas Oil Stadium",South,AFC,"Chuck Pagano",t)
+ (11,"Jacksonville Jaguars","EverBank Field",South,AFC,"Gus Bradley",t)
+ (12,"Tennessee Titans","LP Field",South,AFC,"Ken Whisenhunt",t)
+ (13,"Denver Broncos","Sports Authority Field",West,AFC,"John Fox",t)
+ (14,"Kansas City Chiefs","Arrowhead Stadium",West,AFC,"Andy Reid",t)
+ (15,"Oakland Raiders","O.co Coliseum",West,AFC,"Tony Sparano",t)
+ (16,"San Diego Chargers","Qualcomm Stadium",West,AFC,"Mike McCoy",t)
+ (17,"Dallas Cowboys","AT&T Stadium",East,NFC,"Jason Garrett",t)
+ (18,"New York Giants","MetLife Stadium",East,NFC,"Tom Coughlin",t)
+ (19,"Philadelphia Eagles","Lincoln Financial Field",East,NFC,"Chip Kelly",t)
+ (20,"Washington Redskins",FedExField,East,NFC,"Jay Gruden",t)
+ (21,"Chicago Bears","Soldier Field",North,NFC,"Marc Trestman",t)
+ (22,"Detroit Lions","Ford Field",North,NFC,"Jim Caldwell",t)
+ (23,"Green Bay Packers","Lambeau Field",North,NFC,"Mike McCarthy",t)
+ (24,"Minnesota Vikings","TCF Bank Stadium",North,NFC,"Mike Zimmer",t)
+ (25,"Atlanta Falcons","Georgia Dome",South,NFC,"Mike Smith",t)
+ (26,"Carolina Panthers","Bank of America Stadium",South,NFC,"Ron Rivera",t)
+ (27,"New Orleans Saints","Mercedes-Benz Superdome",South,NFC,"Sean Payton",t)
+nfl=# select teams.head_coaches, teams.conference, teams.division from teams innerjoin conference on teams.division;
+ERROR:  syntax error at or near "conference"
+LINE 1: ...s.conference, teams.division from teams innerjoin conference...
+                                                             ^
+nfl=# teams.head_coaches, teams.conference, teams.division from teams inner join conference on teams.division;
+ERROR:  syntax error at or near "teams"
+LINE 1: teams.head_coaches, teams.conference, teams.division from te...
+        ^
+nfl=# select teams.head_coaches, teams.conference, teams.division from teams inner join conference on teams.division;
+ERROR:  relation "conference" does not exist
+LINE 1: ....conference, teams.division from teams inner join conference...
+                                                             ^
+nfl=# select head_coaches, conference, division from teams where division like 'AF%';
+ERROR:  column "head_coaches" does not exist
+LINE 1: select head_coaches, conference, division from teams where d...
+               ^
+HINT:  Perhaps you meant to reference the column "teams.head_coach".
+nfl=# select teams.head_coach, teams.conference, teams.division from teams where division like 'AF%';
+ head_coach | conference | division
+------------+------------+----------
+(0 rows)
+
+
+nfl=# select teams.head_coach, teams.conference, teams.division from teams where division like 'S%';
+   head_coach   | conference | division
+----------------+------------+----------
+ Bill OBrien    | AFC        | South
+ Chuck Pagano   | AFC        | South
+ Gus Bradley    | AFC        | South
+ Ken Whisenhunt | AFC        | South
+ Mike Smith     | NFC        | South
+ Ron Rivera     | NFC        | South
+ Sean Payton    | NFC        | South
+ Lovie Smith    | NFC        | South
+(8 rows)
+
+
+nfl=# select teams.head_coach, teams.conference, teams.division from teams where conference like 'A%';
+   head_coach   | conference | division
+----------------+------------+----------
+ Doug Marrone   | AFC        | East
+ Joe Philbin    | AFC        | East
+ Bill Belichick | AFC        | East
+ Rex Ryan       | AFC        | East
+ John Harbaugh  | AFC        | North
+ Marvin Lewis   | AFC        | North
+ Mike Pettine   | AFC        | North
+ Mike Tomlin    | AFC        | North
+ Bill OBrien    | AFC        | South
+ Chuck Pagano   | AFC        | South
+ Gus Bradley    | AFC        | South
+ Ken Whisenhunt | AFC        | South
+ John Fox       | AFC        | West
+ Andy Reid      | AFC        | West
+ Tony Sparano   | AFC        | West
+ Mike McCoy     | AFC        | West
+(16 rows)
+
+
+nfl=# select top from players;
+ERROR:  column "top" does not exist
+LINE 1: select top from players;
+               ^
+nfl=# select id from players;
+  id
+------
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+   10
+   11
+   12
+   13
+   14
+   15
+   16
+   17
+   18
+   19
+   20
+   21
+   22
+   23
+   24
+   25
+   26
+   27
+nfl=# select teams.names, teams.head_coach from teams where conference like '%FC' and division like '%t%';
+ERROR:  column teams.names does not exist
+LINE 1: select teams.names, teams.head_coach from teams where confer...
+               ^
+HINT:  Perhaps you meant to reference the column "teams.name".
+nfl=# select teams.name, teams.head_coach from teams where conference like '%FC' and division like '%t%';
+         name         |   head_coach
+----------------------+----------------
+ Buffalo Bills        | Doug Marrone
+ Miami Dolphins       | Joe Philbin
+ New England Patriots | Bill Belichick
+ New York Jets        | Rex Ryan
+ Baltimore Ravens     | John Harbaugh
+ Cincinnati Bengals   | Marvin Lewis
+ Cleveland Browns     | Mike Pettine
+ Pittsburgh Steelers  | Mike Tomlin
+ Houston Texans       | Bill OBrien
+ Indianapolis Colts   | Chuck Pagano
+ Jacksonville Jaguars | Gus Bradley
+ Tennessee Titans     | Ken Whisenhunt
+ Denver Broncos       | John Fox
+ Kansas City Chiefs   | Andy Reid
+ Oakland Raiders      | Tony Sparano
+ San Diego Chargers   | Mike McCoy
+ Dallas Cowboys       | Jason Garrett
+ New York Giants      | Tom Coughlin
+ Philadelphia Eagles  | Chip Kelly
+ Washington Redskins  | Jay Gruden
+ Chicago Bears        | Marc Trestman
+ Detroit Lions        | Jim Caldwell
+ Green Bay Packers    | Mike McCarthy
+ Minnesota Vikings    | Mike Zimmer
+ Atlanta Falcons      | Mike Smith
+ Carolina Panthers    | Ron Rivera
+ New Orleans Saints   | Sean Payton
+nfl=# select teams.name, teams.head_coach from teams where conference = AFC;
+ERROR:  column "afc" does not exist
+LINE 1: ...ms.name, teams.head_coach from teams where conference = AFC;
+                                                                   ^
+nfl=# select teams.name, teams.head_coach from teams where conference = 'AFC';
+         name         |   head_coach
+----------------------+----------------
+ Buffalo Bills        | Doug Marrone
+ Miami Dolphins       | Joe Philbin
+ New England Patriots | Bill Belichick
+ New York Jets        | Rex Ryan
+ Baltimore Ravens     | John Harbaugh
+ Cincinnati Bengals   | Marvin Lewis
+ Cleveland Browns     | Mike Pettine
+ Pittsburgh Steelers  | Mike Tomlin
+ Houston Texans       | Bill OBrien
+ Indianapolis Colts   | Chuck Pagano
+ Jacksonville Jaguars | Gus Bradley
+ Tennessee Titans     | Ken Whisenhunt
+ Denver Broncos       | John Fox
+ Kansas City Chiefs   | Andy Reid
+ Oakland Raiders      | Tony Sparano
+ San Diego Chargers   | Mike McCoy
+(16 rows)
+
+
+nfl=# select teams.name, teams.head_coach from teams where conference = 'AFC' and division = 'East';
+         name         |   head_coach
+----------------------+----------------
+ Buffalo Bills        | Doug Marrone
+ Miami Dolphins       | Joe Philbin
+ New England Patriots | Bill Belichick
+ New York Jets        | Rex Ryan
+(4 rows)
+
+
+nfl=# select max(salary) as HighestSalary from players;
+ highestsalary
+---------------
+      18000000
+(1 row)
+
+
+nfl=# select count name from players where salary = 10000000;
+ERROR:  column "count" does not exist
+LINE 1: select count name from players where salary = 10000000;
+               ^
+nfl=# select count(name) from players where salary = 10000000;
+ count
+-------
+     1
+(1 row)
+
+
+nfl=# select avg(salary) from players;
+         avg
+----------------------
+ 1579692.539817232376
+(1 row)
+
+
+nfl=# select players.name, players.position from players where salary = 10000000;
+    name     | position
+-------------+----------
+ Jason Smith | T
+(1 row)
+
+
+nfl=# select players.name, players.position from players where salary like '10000000';
+ERROR:  operator does not exist: integer ~~ unknown
+LINE 1: ....name, players.position from players where salary like '1000...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+nfl=# select players.name, players.position from players where salary >= 10000000;
+          name           | position
+-------------------------+----------
+ Jake Long               | T
+ Joe Thomas              | T
+ Dwight Freeney          | DE
+ Peyton Manning (buyout) | QB
+ Peyton Manning          | QB
+ Elvis Dumervil          | DE
+ Tamba Hali              | DE
+ Philip Rivers           | QB
+ Michael Vick            | QB
+ Nnamdi Asomugha         | CB
+ Trent Williams          | T
+ Matthew Stafford        | QB
+ Cliff Avril             | DE
+ Jared Allen             | DE
+ Matt Ryan               | QB
+ Brent Grimes            | CB
+ Drew Brees              | QB
+ Vincent Jackson         | WR
+ Calais Campbell         | DE
+ Sam Bradford            | QB
+ Chris Long              | DE
+ Jason Smith             | T
+(22 rows)
+
