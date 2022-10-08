@@ -1,5 +1,5 @@
  1. List the names of all NFL teams'
- - select teams from teams;
+ - select name from teams;
 
 2. List the stadium name and head coach of all NFC teams
 - select stadium, head_coach from teams;
@@ -18,7 +18,7 @@ select id from players;
 - select teams.name, teams.head_coach from teams where conference = 'AFC' and division = 'East';
 
 6. The 50 players with the highest salaries
-- 
+- select * from players order by salary desc limit 50; 
 
 7. The average salary of all NFL players
 - select avg(salary) from players;
