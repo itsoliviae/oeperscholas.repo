@@ -1,0 +1,13 @@
+.reviews-container {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+    align-items: center;
+    font-family:'Trebuchet MS';
+    font-size: small;
+    background-color: gray;
+    justify-content: space-evenly;
+}
+
+

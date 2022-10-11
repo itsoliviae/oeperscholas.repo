@@ -1,0 +1,12 @@
+.dash-container {
+    display: inline-flex;
+    flex-direction: column;
+    
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    font-family:'Trebuchet MS';
+    font-size: small;
+    background-color: lightgray;
+    
+}
+
