@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Bread from 'src/Bread';
 
 @Component({
   selector: 'app-baked-goods-list',
@@ -11,5 +12,24 @@ export class BakedGoodsListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  breads: Bread[] = [
+    {
+      breadName: 'Banana Bread',
+      mainIngredient: 'bananas',
+      category: 'breakfast'
+    },
+    {
+      breadName: 'Pumpernickel',
+      mainIngredient: 'brown sugar',
+      category: 'dinner'
+    },
+    {
+      breadName: 'Honey Oat',
+      mainIngredient: 'oats',
+      category: 'dinner'
+    }
+  ]
+
 
 }
