@@ -1,1 +1,3 @@
-<app-breads></app-breads>
+<ul *ngFor="let bread of breads">
+    <li>{{ bread | json }}</li>
+</ul>
