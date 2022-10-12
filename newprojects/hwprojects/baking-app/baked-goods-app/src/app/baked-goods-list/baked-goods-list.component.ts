@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Bread from 'src/Bread';
 
+
 @Component({
   selector: 'app-baked-goods-list',
   templateUrl: './baked-goods-list.component.html',
@@ -31,6 +32,14 @@ export class BakedGoodsListComponent implements OnInit {
       category: 'dinner'
     }
   ]
+
+ /* cookies: Cookie[] = [
+    {
+      cookieName: 'Chocolate chip',
+      mainIngredient: 'chocolate chips',
+      category: 'dessert'
+    }
+  ] */
 
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Cookie from 'src/Cookie';
 
 @Component({
   selector: 'app-cookies',
@@ -12,4 +13,11 @@ export class CookiesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cookies: Cookie[] = [
+    {
+      cookieName: 'Chocolate chip',
+      mainIngredient: 'chocolate chips',
+      category: 'dessert'
+    }
+  ]
 }
