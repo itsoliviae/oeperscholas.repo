@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Cake from '../cake';
 
 @Component({
   selector: 'app-cakes',
@@ -12,4 +13,11 @@ export class CakesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cakes: Cake[] = [
+    {
+      cakeName: 'Chocolate cake',
+      mainIngredient: 'Cocoa powder',
+      category: 'dessert'
+    }
+  ]
 }
