@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+.dash-container {
+    display: inline-flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    font-family:'Trebuchet MS';
+    font-size: small;
+    background-color: lightgray;
+    order: 1;
+    align-self: flex-start;
+    
+}
+
+.reviews-container {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+    font-family:'Trebuchet MS';
+    font-size: small;
+    background-color: gray;
+    justify-content: space-evenly;
+    order: 2;
+    align-self: center;
+}
+
+.av-rating-container {
+    display: inline-flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    font-family:'Trebuchet MS';
+    font-size: small;
+    background-color: lightgray;
+    order: 3;
+    align-self: baseline;
+    
+}
+
+.sentiment-container {
+    display: inline-flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    font-family:'Trebuchet MS';
+    font-size: small;
+    background-color: lightgray;
+    order: 4;
+    
+}
+.visitors-container {
+    display: inline-flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    font-family:'Trebuchet MS';
+    font-size: small;
+    background-color: lightgray;
+    order: 5;
+    
+}
+
