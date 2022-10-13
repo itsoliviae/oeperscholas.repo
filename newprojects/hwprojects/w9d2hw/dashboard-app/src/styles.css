@@ -1,63 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+
 .dash-container {
-    display: inline-flex;
-    flex-direction: column;
-    flex-flow: column wrap;
-    justify-content: space-evenly;
     font-family:'Trebuchet MS';
     font-size: small;
     background-color: lightgray;
     order: 1;
-    align-self: flex-start;
+    padding: 5px;
+    width: 130px;
+    height: 300px;
+    justify-content: center;
+    
     
 }
 
 .reviews-container {
-    display: inline-flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex-flow: column wrap;
     font-family:'Trebuchet MS';
     font-size: small;
     background-color: gray;
-    justify-content: space-evenly;
+    padding: 5px;
+    width: 150px;
+    height: 180px;
+    margin-top: -300px;
+    margin-left: 150px;
+    justify-content: center;
+    
     order: 2;
-    align-self: center;
+    
 }
 
 .av-rating-container {
-    display: inline-flex;
-    flex-direction: column;
-    flex-flow: column wrap;
-    justify-content: space-evenly;
     font-family:'Trebuchet MS';
     font-size: small;
     background-color: lightgray;
     order: 3;
-    align-self: baseline;
+    padding: 5px;
+    width: 150px;
+    height: 180px;
+    margin-top: -190px;
+    margin-left: 330px;
+    justify-content: center;
+    
     
 }
 
 .sentiment-container {
-    display: inline-flex;
-    flex-direction: column;
-    flex-flow: column wrap;
-    justify-content: space-evenly;
     font-family:'Trebuchet MS';
     font-size: small;
     background-color: lightgray;
     order: 4;
-    
-}
-.visitors-container {
-    display: inline-flex;
-    flex-direction: column;
-    flex-flow: column wrap;
-    justify-content: space-evenly;
-    font-family:'Trebuchet MS';
-    font-size: small;
-    background-color: lightgray;
-    order: 5;
+    padding: 5px;
+    width: 150px;
+    height: 180px;
+    margin-top: -190px;
+    margin-left: 510px;
+    justify-content: center;
     
 }
 
+.visitors-container {
+
+    justify-content:left;
+    font-family:'Trebuchet MS';
+    font-size: small;
+    background-color: lightgray;
+    padding: 5px;
+    width: 510px;
+    height: 180px;
+    margin-top: 20px;
+    margin-left: 150px;
+    justify-content: left;
+  
+}
