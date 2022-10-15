@@ -15,9 +15,19 @@ export class CookiesComponent implements OnInit {
 
   cookies: Cookie[] = [
     {
-      cookieName: 'Chocolate chip',
-      mainIngredient: 'chocolate chips',
-      category: 'dessert'
+      cookieName: 'Chocolate Chip',
+      mainIngredient: 'Main Ingredient: chocolate chips',
+      tagline: 'A classic!'
+    },
+    {
+      cookieName: 'Snickerdoodle',
+      mainIngredient: 'Main Ingredient: cinnamon',
+      tagline: 'Perfect for fall!'
+    },
+    {
+      cookieName: 'Oatmeal Raisin',
+      mainIngredient: 'Main Ingreidents: oats, raisins',
+      tagline: 'No one actually likes these, right?'
     }
   ]
 }

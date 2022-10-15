@@ -1,8 +1,12 @@
 
 <div class="cookie-container">
-    <p>cookies works!</p>
+    <h2>COOKIES</h2>
 <ul *ngFor="let cookie of cookies">
-    <li>{{ cookie | json }}</li>
-    <li>list item here</li>
+    <span class="name"><h3>{{cookie.cookieName}}</h3></span>
+    <span class="tagline">{{cookie.tagline}}</span><br>
+    <span class="mainIngredient">{{cookie.mainIngredient}}</span>
+    
 </ul>
 </div>
+
+

@@ -1,7 +1,7 @@
 interface Cookie {
     cookieName: string;
     mainIngredient: string;
-    category: string;
+    tagline: string;
 };
 
 export default Cookie;
