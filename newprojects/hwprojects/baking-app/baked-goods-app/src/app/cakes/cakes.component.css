@@ -1,7 +1,10 @@
-.cakeName {
-    font-style: bold;
-}
+
 
 .tagline {
     font-style: italic;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 14pt;
 }
