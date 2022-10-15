@@ -5,4 +5,10 @@
 .name {
     font-weight: bold;
     font-size: 14pt;
+    font-family: Arial;
+    color: 	#a70000;
+}
+
+h2 {
+    color: #ff5252;
 }
