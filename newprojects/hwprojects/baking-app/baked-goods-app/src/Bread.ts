@@ -1,7 +1,7 @@
 interface Bread {
     breadName: string;
     mainIngredient: string;
-    category: string;
+    tagline: string;
 };
 
 export default Bread;
