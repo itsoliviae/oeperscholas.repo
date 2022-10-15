@@ -1,7 +1,7 @@
 interface Cake {
     cakeName: string;
     mainIngredient: string;
-    category: string;
+    tagline: string;
 };
 
 export default Cake;

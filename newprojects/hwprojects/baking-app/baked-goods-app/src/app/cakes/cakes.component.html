@@ -1,8 +1,10 @@
 
 <div class="cake-container">
-    <p>cakes works!</p>
-<ul *ngFor="let cake of cakes">
-    <li>{{ cake | json }}</li>
-    <li>list item here</li>
+    <h2>CAKES</h2>
+    <ul *ngFor="let cake of cakes">
+        <span class="name"><h3>{{cake.cakeName}}</h3></span>
+        <span class="tagline">{{cake.tagline}}</span><br>
+        <span class="mainIngredient">{{cake.mainIngredient}}</span>
 </ul>
 </div>
+
