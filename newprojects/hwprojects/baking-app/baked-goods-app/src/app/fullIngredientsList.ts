@@ -1,0 +1,3 @@
+interface cakeList {
+    ingredients: string;
+}
