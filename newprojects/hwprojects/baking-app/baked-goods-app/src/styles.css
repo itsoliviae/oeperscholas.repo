@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+.recipe-go {
+    width: 200px;
+    height: 200px;
+}
+
 .bread-container .cake-container .cookie-container {
         display: flex;  
         flex-flow: row wrap;
@@ -46,8 +52,8 @@
 
 }
 
-.recipe-container {
-    border: black;
+.photo {
+    margin-left: 480px;
 }
 
 
